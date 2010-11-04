@@ -1,0 +1,22 @@
+This is the first version of my temperhum driver for the pcsensor temperhum device.
+it will create a device node in the /sys tree which will have two files, t and rh.
+These files will display the temperature and relative humidity. 
+You can also convert readings to Farenheit by echo F > <path to device>/t
+or use centegrade again echo C > <path to device>/t
+
+The udev rule will map this driver file to /etc/th. If you know a more elegant 
+way of doing this, let me know!
+
+
+LIMITATIONS
+Tested on 2.6 kernel only.
+Device driver is not HID aware. USBHID will try to claim the driver. You must 
+either disable HID, or figure out a quirk for it that prevents it loading.
+
+TODO
+Re-write as a HID driver. 
+Any help offered in this will be gladly accepted!
+
+Dominic Storey
+dstorey@barossafarm.com
+

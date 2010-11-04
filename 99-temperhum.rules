@@ -1,0 +1,2 @@
+BUS=="usb", SYSFS{idVendor}=="1130", SYSFS{idProduct}=="660c", RUN+="/etc/udev/temperhum.sh add $env{DEVPATH} th"
+
